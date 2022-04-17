@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.give_me_moneyz.abhorsen.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "abhorsen.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "SplashTextResourceSupplierMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

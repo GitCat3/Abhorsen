@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "abhorsen:block/example_block" }
+  }
+}
