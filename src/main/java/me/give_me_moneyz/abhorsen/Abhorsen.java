@@ -15,7 +15,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class Abhorsen {
 
     public static final String MOD_ID = "abhorsen";
-    public static final ItemGroup TUTORIAL_GROUP = new AbhorsenGroup("abhorsen");
+    public static final ItemGroup ABHORSENGROUP = new AbhorsenGroup("abhorsen");
 
     public Abhorsen() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -36,7 +36,7 @@ public class Abhorsen {
 
         @Override
         public ItemStack createIcon() {
-            return ItemInit.EXAMPLE_ITEM.get().getDefaultInstance();
+            return ItemInit.RANNA.get().getDefaultInstance();
         }
     }
 }

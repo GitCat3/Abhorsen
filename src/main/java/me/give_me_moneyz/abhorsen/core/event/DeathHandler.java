@@ -13,7 +13,7 @@ public class DeathHandler {
 
     @SubscribeEvent
     public static void onDeath(final LivingDeathEvent event){
-        if(event.getEntityLiving().getHeldItemMainhand().getItem().toString().equals("example_item")) {
+        if(event.getEntityLiving().getHeldItemMainhand().getItem().toString().equals("ranna")) {
             event.getEntityLiving().setHealth(event.getEntityLiving().getMaxHealth());
             event.setCanceled(true);
             System.out.println("Nope!");
