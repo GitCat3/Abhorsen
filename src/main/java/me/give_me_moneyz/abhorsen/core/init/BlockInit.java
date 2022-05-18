@@ -21,7 +21,4 @@ public class BlockInit {
                     () -> new Block(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BLUE)
                             .hardnessAndResistance(15f, 30f).harvestTool(ToolType.PICKAXE).harvestLevel(5)
                             .sound(SoundType.METAL).setRequiresTool()));
-
-    public static final RegistryObject<Block> EXAMPLE_ORE = BLOCKS.register("example_ore",
-            () -> new Block(AbstractBlock.Properties.from(Blocks.IRON_ORE)));
 }

@@ -17,7 +17,4 @@ public class ItemInit {
     public static final RegistryObject<BlockItem> EXAMPLE_BLOCK = ITEMS.register("example_block",
             () -> new BlockItem(BlockInit.EXAMPLE_BLOCK.get(),
                     new Item.Properties().group(Abhorsen.ABHORSENGROUP)));
-
-    public static final RegistryObject<BlockItem> EXAMPLE_ORE = ITEMS.register("example_ore",
-            () -> new BlockItem(BlockInit.EXAMPLE_ORE.get(), new Item.Properties().group(Abhorsen.ABHORSENGROUP)));
 }
