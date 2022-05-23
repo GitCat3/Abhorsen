@@ -2,6 +2,7 @@ package me.give_me_moneyz.abhorsen;
 
 import me.give_me_moneyz.abhorsen.core.init.BlockInit;
 import me.give_me_moneyz.abhorsen.core.init.ItemInit;
+import me.give_me_moneyz.abhorsen.core.init.PacketHandler;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -22,6 +23,7 @@ public class Abhorsen {
         bus.addListener(this::setup);
         ItemInit.ITEMS.register(bus);
         BlockInit.BLOCKS.register(bus);
+        PacketHandler.init();
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -35,7 +37,7 @@ public class Abhorsen {
         }
 
         @Override
-        public ItemStack createIcon() {
+        public ItemStack makeIcon() {
             return ItemInit.RANNA.get().getDefaultInstance();
         }
     }

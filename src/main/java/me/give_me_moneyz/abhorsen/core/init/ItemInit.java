@@ -12,9 +12,9 @@ public class ItemInit {
             Abhorsen.MOD_ID);
 
     public static final RegistryObject<Item> RANNA = ITEMS.register("ranna",
-            () -> new Item(new Item.Properties().group(Abhorsen.ABHORSENGROUP)));
+            () -> new Item(new Item.Properties().tab(Abhorsen.ABHORSENGROUP)));
 
     public static final RegistryObject<BlockItem> EXAMPLE_BLOCK = ITEMS.register("example_block",
             () -> new BlockItem(BlockInit.EXAMPLE_BLOCK.get(),
-                    new Item.Properties().group(Abhorsen.ABHORSENGROUP)));
+                    new Item.Properties().tab(Abhorsen.ABHORSENGROUP)));
 }
