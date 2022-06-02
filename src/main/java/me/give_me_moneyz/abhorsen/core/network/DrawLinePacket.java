@@ -1,16 +1,18 @@
 package me.give_me_moneyz.abhorsen.core.network;
 
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.fml.network.NetworkDirection;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.fml.network.NetworkEvent;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class DrawLinePacket {
     private final double xPos;
     private final double yPos;
     private final double zPos;
+    public static List<Vector3d> entitypos = new ArrayList<>();
 
     public DrawLinePacket(double x, double y, double z) {
         this.xPos = x;
@@ -32,7 +34,10 @@ public class DrawLinePacket {
         ctx.get().enqueueWork(() -> {
             System.out.println(this.xPos);
             System.out.println(this.yPos);
-            System.
+            System.out.println(this.zPos);
+            if(!entitypos.contains(new Vector3d(this.xPos, this.yPos, this.zPos))) {
+                entitypos.add(new Vector3d(this.xPos, this.yPos, this.zPos));
+            }
         });
         ctx.get().setPacketHandled(true);
     }

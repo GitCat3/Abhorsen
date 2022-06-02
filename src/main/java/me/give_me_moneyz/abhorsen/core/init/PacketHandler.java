@@ -1,11 +1,10 @@
 package me.give_me_moneyz.abhorsen.core.init;
 
 import me.give_me_moneyz.abhorsen.Abhorsen;
+import me.give_me_moneyz.abhorsen.core.network.DebugKeyPacket;
 import me.give_me_moneyz.abhorsen.core.network.DrawLinePacket;
-import net.minecraft.entity.player.ServerPlayerEntity;
+import me.give_me_moneyz.abhorsen.core.network.ClientNecromancerPacket;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.util.FakePlayer;
-import net.minecraftforge.fml.network.NetworkDirection;
 import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
 
@@ -21,11 +20,8 @@ public final class PacketHandler {
     public static void init() {
         int index = 0;
         INSTANCE.registerMessage(++index, DrawLinePacket.class, DrawLinePacket::encode, DrawLinePacket::decode, DrawLinePacket::handle);
+        INSTANCE.registerMessage(++index, DebugKeyPacket.class, DebugKeyPacket::encode, DebugKeyPacket::decode, DebugKeyPacket::handle);
+        INSTANCE.registerMessage(++index, ClientNecromancerPacket.class, ClientNecromancerPacket::encode, ClientNecromancerPacket::decode, ClientNecromancerPacket::handle);
     }
 
-    public static void sendTo(Object msg, ServerPlayerEntity player) {
-        if (!(player instanceof FakePlayer)) {
-            INSTANCE.sendTo(msg, player.connection.getConnection(), NetworkDirection.PLAY_TO_CLIENT);
-        }
-    }
 }
